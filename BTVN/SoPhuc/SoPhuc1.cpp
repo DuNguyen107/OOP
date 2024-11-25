@@ -22,8 +22,6 @@ class SoPhuc{
 			this->phanThuc = p.phanThuc;
 			this->phanAo = p.phanAo;
 		}
-//		void nhap();
-//		void xuat();
 		friend istream& operator >> (istream &is, SoPhuc &p);
 		friend ostream& operator << (ostream &os, SoPhuc p);
 		double getPhanThuc();
@@ -31,16 +29,11 @@ class SoPhuc{
 		double getPhanAo();
 		void setPhanAo(double phanAo);
 		friend double Modun(const SoPhuc &p1);
-//		friend SoPhuc Cong(const SoPhuc &p1, const SoPhuc &p2);
-//		friend SoPhuc Tru(const SoPhuc &p1, const SoPhuc &p2);
-//		friend SoPhuc Nhan(const SoPhuc &p1, const SoPhuc &p2);
-//		friend SoPhuc Chia(const SoPhuc &p1, const SoPhuc &p2);
 		
 		friend SoPhuc operator + (const SoPhuc &p1, const SoPhuc &p2);
 		SoPhuc operator - (const SoPhuc &p);
 		friend SoPhuc operator * (const SoPhuc &p1, const SoPhuc &p2);
 		friend SoPhuc operator / (const SoPhuc &p1, const SoPhuc &p2);
-//		void SoSanh(const SoPhuc &p1);
 		friend bool operator ==(const SoPhuc &p1, const SoPhuc &p2);
 		bool operator > (const SoPhuc &p);
 		bool operator < (const SoPhuc &p);
@@ -51,31 +44,6 @@ double Modun(const SoPhuc &p1){
 	p = sqrt(pow(p1.phanThuc,2)+pow(p1.phanAo,2));
 	return p;
 }
-//SoPhuc Cong(const SoPhuc &p1, const SoPhuc &p2){
-//	SoPhuc p;
-//	p.phanThuc = p1.phanThuc + p2.phanThuc;
-//	p.phanAo = p1.phanAo + p2.phanAo;
-//	return p;
-//}
-//SoPhuc Tru(const SoPhuc &p1, const SoPhuc &p2){
-//	SoPhuc p;
-//	p.phanThuc = p1.phanThuc - p2.phanThuc;
-//	p.phanAo = p1.phanAo - p2.phanAo;
-//	return p;
-//}
-//SoPhuc Nhan(const SoPhuc &p1, const SoPhuc &p2){
-//	SoPhuc p;
-//	p.phanThuc = p1.phanThuc*p2.phanThuc - p1.phanAo*p2.phanAo;
-//	p.phanAo = p1.phanThuc*p2.phanAo + p2.phanThuc*p1.phanAo;
-//	return p;
-//}
-//SoPhuc Chia(const SoPhuc &p1, const SoPhuc &p2){
-//	SoPhuc p;
-//	double mau = pow(p2.phanThuc, 2) + pow(p2.phanAo, 2);
-//	p.phanThuc = (p1.phanThuc*p2.phanThuc + p1.phanAo*p2.phanAo)/mau;
-//	p.phanAo = (p1.phanAo*p2.phanThuc - p1.phanThuc*p2.phanAo)/mau;
-//	return p;
-//}
 
 SoPhuc operator + (const SoPhuc &p1, const SoPhuc &p2){
 	SoPhuc p;
@@ -102,16 +70,6 @@ SoPhuc operator / (const SoPhuc &p1, const SoPhuc &p2){
 	p.phanAo = (p1.phanAo*p2.phanThuc - p1.phanThuc*p2.phanAo)/mau;
 	return p;
 }
-//void SoPhuc::SoSanh(const SoPhuc &p2){
-//	double mod1 = Modun(*this);
-//    double mod2 = Modun(p2);
-//    if (mod1 > mod2)
-//        cout << "=> p1 > p2\n";
-//    else if (mod1 < mod2)
-//        cout << "=> p1 < p2\n";
-//    else
-//        cout << "=> p1 = p2\n";
-//}
 bool operator ==(const SoPhuc &p1, const SoPhuc &p2){
 	double mod1 = Modun(p1);
     double mod2 = Modun(p2);
@@ -127,15 +85,6 @@ bool SoPhuc::operator < (const SoPhuc &p){
     double mod2 = Modun(p);
     return mod1 < mod2;
 }
-//void SoPhuc::nhap(){
-//	cout << "Nhap phan thuc: "; cin >> phanThuc;
-//	cout << "Nhap phan ao: "; cin >> phanAo;
-//}
-//void SoPhuc::xuat(){
-//	if (phanAo == 0) cout << phanThuc;
-//    else if (phanAo < 0) cout << phanThuc << phanAo << "i";  
-//    else cout << phanThuc << "+" << phanAo << "i"; 
-//}
 
 istream& operator >> (istream &is, SoPhuc &p){
 	cout << "Nhap phan thuc: "; cin >> p.phanThuc;

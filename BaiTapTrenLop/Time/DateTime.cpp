@@ -209,5 +209,4 @@ int main() {
     cout << "DateTime 2: " << dt2 << endl;
     DateTime dt3 = dt1 + DateTime(5, 26);
     cout << "DateTime 1 sau khi cong 5 ngay: " << dt3 << endl;
-    Date
 }
